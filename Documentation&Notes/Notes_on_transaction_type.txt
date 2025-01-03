@@ -1,0 +1,11 @@
+Information on the transaction type for HIVE blockchain transaction
+
+
+The specific case of "custom_json" type :
+    1. Place an order on the market (example of a limit order on tribal DEX), the payload contain the following :
+        "contractName" : "market"
+        "contractAction" : "sell" / "buy"
+        "contractPayload" : symbol, qty and limit price of the order
+
+        No financial transaction for this type of blockchain transaction.
+        For the time being we ignore this kind of transaction.
