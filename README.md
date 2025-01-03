@@ -5,6 +5,10 @@ What is done :
 - Store these transaction in a standardized way on google drive / excel file
 - Able to source all outgoing transaction on HIVE L2 (moslty OCLT)
 
+Noticed that available transaction of Token on the main chain does not contain enough details for accounting.
+ -> Use Node.JS and HIVE Engine to extract in excel file L2 trnasaction from the blockchain.
+ -> Now I am able to get all recent transaction... we still need to gather only OCLT related transaction. For this need to check with the node js API
+
 Problem:
 - Not able to source incoming transaction on L2 blockchain. Idk why but we can't see on HIVE blockexplored incoming OCLT transaction - see the last transaciton from paulo21 to ocln-finacct, sent 0.2 OCLT, and there is no log on ocln-finacct transactions list.... ?
   - To solve this we need to access L2 API (HIVE engine), no ideas yet how to do it.

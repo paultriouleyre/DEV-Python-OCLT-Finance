@@ -11,11 +11,12 @@ wss.on('connection', ws => {
   console.log('Client connected');
 
   // Stream data from HIVE smart contract blockchain
-  ssc.stream('tokens', 1000, (err, result) => {
+  ssc.stream((err, result) => {
     if (err) {
       console.error(err);
       return;
     }
+    console.log(result);
     ws.send(JSON.stringify(result));
   });
 });
