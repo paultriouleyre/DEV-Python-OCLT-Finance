@@ -22,3 +22,33 @@ Next steps:
 - Define acounting scheme per type of transaction to automate accounting entries generation
 - source FX rates (idk why but Yahoo finance does not work)
 - tbd...
+
+Summary of functions built in the Following file :
+These helps converting and handling data within HIVE blockchain transation
+
+- convert_currency(_currency)
+Convert weird Currency code into readable string.
+
+- get_all_account_transactions(account_name)
+Get ALL transaction of a specified HIVE account and store it into a panda dataframe.
+
+- get_transaction_transfer(account_name)
+For one HIVE account, extract all transaction with a "transfer" type.
+Meaning all the Following types : "transfer_from_savings", "transfer_to_savings", "transfer", "claim_reward_balance", "account_create"
+Result is stored in a panda dataframe, same format for all get_******_transaction_*******
+
+- get_json_transaction_transfer(account_name)
+For one HIVE account, extract all "JSON" typ of transaction.
+These are the transaction bridging from L1 (HIVE/HBD) to L2 (OCLT or SWAP.HIVE)
+Result is stored in a panda dataframe, same format for all get_******_transaction_******
+
+- get_transaction_collateral(account_name)
+Get all collateral type of transactions
+No idea why I created a separated function for this…
+Result is stored in a panda dataframe, same format for all get_******_transaction_******
+
+- merge_transaction_ledgers(wallet_name)
+Merge results of get_transaction_collateral and get_transaction_transfer into one PD Dataframe.
+
+- export_to_excel(panda_dataframe_data, path_to_folder, file_name)
+Everything is in the name…
